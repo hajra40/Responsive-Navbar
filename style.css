@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li,a {
+  list-style: none;
+  text-decoration: none;
+}
+
+nav {
+  height: 88px;
+  background: #202020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.innernav {
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 0.7rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+li {
+  padding: 0 0.6rem;
+}
+
+a{
+  color: #616060;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+i {
+  color: #616060;
+}
+
+.menu i,
+.cross i{
+  display: none;
+  cursor: pointer;
+}
+
+a:hover,
+.menu i:hover,
+.cross i:hover {
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.show {
+  position: fixed;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  top: -1000px;
+  background: #333;
+  transition: 0.5s;
+  animation: scroll 1s;
+}
+
+@keyframes scroll {
+  0%{
+    top: -1000px;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  100%{
+    top: 80px;
+    transition: 0.5s;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 650px){
+  .innernav{
+    max-width: 100%;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .show {
+    top: 80px;
+    left: 0px;
+  }
+
+  .show li {
+    padding: 1rem;
+  }
+
+  .menu i{
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  .cross i {
+    display: none;
+    font-size: 1.5rem;
+  }
+
+  /* show the cross icon when menu is clicked and remove the menu icon */
+  .show-cross i{
+    display: block;
+  }
+
+  /* remove the menu icon when it is clicked */
+  .remove-menu i{
+    display: none;
+  }
+}
+
